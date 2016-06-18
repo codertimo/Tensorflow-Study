@@ -19,8 +19,7 @@ hyp = W * X + b
 cost = tf.reduce_mean(tf.square( hyp - Y ))
 
 #손실함수를 최소로 만들도록 정의함
-a= tf.Variable(0,1)
-optimizer = tf.train.GradientDescentOptimizer(a)
+optimizer = tf.train.GradientDescentOptimizer(1e-2)
 train = optimizer.minimize(cost)
 
 #W,B의 변수들을 초기화 시켜주는 연산을 정의함

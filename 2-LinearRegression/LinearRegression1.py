@@ -3,7 +3,7 @@ import tensorflow as tf
 
 #값 설정
 x_data = [1,2,3]
-y_data = [3,3,2]
+y_data = [1,2,3]
 
 # -1.0 부터 1.0까지의 수중 랜덤하게 갖는 변수를 정의함
 W = tf.Variable(tf.random_uniform([1],-1.0,1.0))
@@ -16,8 +16,7 @@ hyp = W * x_data + b
 cost = tf.reduce_mean(tf.square( hyp - y_data ))
 
 #손실함수를 최소로 만들도록 정의함
-a= tf.Variable(0,1)
-optimizer = tf.train.GradientDescentOptimizer(a)
+optimizer = tf.train.GradientDescentOptimizer(1e-2)
 train = optimizer.minimize(cost)
 
 #W,B의 변수들을 초기화 시켜주는 연산을 정의함
