@@ -13,7 +13,7 @@ def xavier_init(input_size, output_size, uniform=True):
 
 # MNIST 데이터를 읽늗다.
 from tensorflow.examples.tutorials.mnist import input_data
-mnist = input_data.read_data_sets("MNIST_data/", one_hot=True)
+mnist = input_data.read_data_sets("../MNIST_data/", one_hot=True)
 
 
 learning_rate = 0.001
